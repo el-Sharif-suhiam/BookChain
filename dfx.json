@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "BookChain_backend": {
+      "main": "src/BookChain_backend/main.mo",
+      "type": "motoko"
+    },
+    "BookChain_frontend": {
+      "dependencies": [
+        "BookChain_backend"
+      ],
+      "source": [
+        "src/BookChain_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "BookChain_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
