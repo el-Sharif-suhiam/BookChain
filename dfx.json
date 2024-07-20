@@ -1,16 +1,16 @@
 {
   "canisters": {
+    "internet-identity": {
+      "type": "pull",
+      "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+    },
     "BookChain_backend": {
       "main": "src/BookChain_backend/main.mo",
       "type": "motoko"
     },
     "BookChain_frontend": {
-      "dependencies": [
-        "BookChain_backend"
-      ],
-      "source": [
-        "src/BookChain_frontend/dist"
-      ],
+      "dependencies": ["BookChain_backend"],
+      "source": ["src/BookChain_frontend/dist"],
       "type": "assets",
       "workspace": "BookChain_frontend"
     }

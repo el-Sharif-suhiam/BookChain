@@ -1,30 +1,30 @@
-import { useState } from 'react';
-import { BookChain_backend } from 'declarations/BookChain_backend';
+import { useState } from "react";
+import { BookChain_backend } from "declarations/BookChain_backend";
+import NavBar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import { Route, Routes, Link } from "react-router-dom";
+import CreateNFT from "./components/CreateNFT";
+import { AuthClient } from "@dfinity/auth-client";
+import Collections from "./components/Collections";
+import BookSection from "./components/BookSection";
+import Book from "./components/Book";
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    BookChain_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<CreateNFT />} />
+        <Route path="/collections" element={<Collections />} />
+        <Route path="/booksection" element={<BookSection />} />
+        <Route path="/booksection/book" element={<Book />} />
+        <Route path="*" element={<h1>error 404 page not found</h1>} />
+      </Routes>
+      {/* <main></main> */}
+      <Footer />
+    </>
   );
 }
 

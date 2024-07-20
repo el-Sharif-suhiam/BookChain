@@ -1,0 +1,4 @@
+Jul 20 14:25:08.564 INFO Fetching dependencies of canister rdmx6-jaaaa-aaaaa-aaadq-cai..., version: 0.21.0
+Jul 20 14:25:14.291 INFO Found 1 dependencies:
+rdmx6-jaaaa-aaaaa-aaadq-cai, version: 0.21.0
+Jul 20 14:25:14.291 INFO Pulling canister rdmx6-jaaaa-aaaaa-aaadq-cai..., version: 0.21.0
