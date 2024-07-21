@@ -76,14 +76,17 @@ function CreateNFT() {
     } else {
       console.log("welcome !!");
       setBookMetaData({ ...bookMetaData, owner: useIdentity.userIdentity });
-      let actor = await BookChain_backend.MakeBook(
-        bookMetaData,
-        Number(totalCap)
-      );
-      console.log(actor);
-      setBookCanisterID(actor);
-      let aa = await newHandleFile(bookCanisterID, filePdf);
-      console.log(aa);
+      new Promise(async (resolve, reject) => {
+        let cansiter = await BookChain_backend.MakeBook(
+          bookMetaData,
+          Number(totalCap)
+        );
+        setBookCanisterID(cansiter);
+        resolve(cansiter);
+      }).then((e) => {
+        console.log(e);
+        newHandleFile(e, filePdf);
+      });
     }
   }
   ///////////////////////////////////////////////////////////////////

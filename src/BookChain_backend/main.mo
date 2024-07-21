@@ -68,7 +68,7 @@ actor Main {
       owner = caller;
     };
     var buffer : Buffer.Buffer<Types.Canister> = Buffer.fromArray(booksCanistersList);
-    Cycles.add<system>(5_000_000_000_000);
+    Cycles.add<system>(1_000_000_000_000);
     let bookCanister = await Books.Book(bookData, total); // accepts 10_000_000 cycles
     let principal = Principal.fromActor(bookCanister);
     let newBookCanisterId : Types.Canister = {
